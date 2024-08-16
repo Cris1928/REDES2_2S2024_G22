@@ -206,6 +206,8 @@ SW8_G22(config)#spanning-tree mode rapid-pvst
 
 ## Seguridad de interfaces de red
 
+### Comandos
+
 ```bash
 SW8_G22#Configure terminal
 SW8_G22(config)#interface Fa0/2
