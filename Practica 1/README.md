@@ -204,6 +204,8 @@ SW8_G22(config)#spanning-tree mode rapid-pvst
 |1|PVST|00:28.15|00:55:42|00:55.48|
 |2|Rapid PVST|0|00:01.93|00:23.56|
 
+### Elección de escenario  
+Se eligió el escenario 2, ya que la convergencia es mas rapida, no se pierden paquetes y se tiene un árbol de expansión por cada vlan, lo cual permite que la red sea más eficiente. 
 ## Seguridad de interfaces de red
 
 ### Comandos
