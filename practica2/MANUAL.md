@@ -37,7 +37,7 @@ Existen 8 redes dentro de la topología con una ip determinada con la siguientes
 ![image](https://github.com/user-attachments/assets/5c33498c-6fa4-4591-8ab1-1815f3b28187)
 ## VLAN
 en cada switch involucrado. Creamos las VLANs 34, 14, y 24. Para hacerlo, se siguieron los siguientes pasos en cada switch  
-´´´´ 
+```
 Switch(config)# vlan 34
 Switch(config-vlan)# name Recursos
 Switch(config-vlan)# exit
@@ -49,4 +49,27 @@ Switch(config-vlan)# exit
 Switch(config)# vlan 24
 Switch(config-vlan)# name Visitantes
 Switch(config-vlan)# exit
-´´´´
+```
+## Asignar puertos a las VLANs
+En cada switch donde están conectadas las computadoras rodeadas de verde, se asignaron los puertos a la VLAN 34.  
+```
+Switch(config)# interface fastEthernet 0/1
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 34
+Switch(config-if)# exit
+
+```
+Para las computadoras en la VLAN 14 (Soporte), conectadas en los puertos correspondientes de cada switch  
+```
+Switch(config)# interface fastEthernet 0/2
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 14
+Switch(config-if)# exit
+```
+Para las computadoras en la VLAN 24, se siguio este procedimiento en los puertos correspondiente  
+```
+Switch(config)# interface fastEthernet 0/3
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 24
+Switch(config-if)# exit
+```
