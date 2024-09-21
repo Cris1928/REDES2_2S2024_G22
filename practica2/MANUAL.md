@@ -151,7 +151,7 @@ router ospf 22
 El EIGRP es un protocolo de enrutamiento de estado de enlace, que se utiliza para enrutar paquetes dentro de una red de computadoras, por lo que se procede a configurar el mismo sobre los switches de la topología, como se muestra a continuación:
 
 
-## acls
+## ACLs
 Estas seran utilizadas para que bloqueen o permitan tráfico de manera específica.  
 De la siguiente forma se han configurado los acls del switchs.  
 ### T3
@@ -205,5 +205,12 @@ ip access-list extended RECURSOS
  permit icmp any any echo-reply
  permit icmp any any echo
 ```
+## PRUEBA DE FUNCIONALIDAD
+### SOPORTE – T3
+Todas las demás VLANs de la red. 
+![image](https://github.com/user-attachments/assets/df512696-e2a3-451d-861c-461b6dc4c647)
+
+### RECURSOS – T3, M2, T9
+Todas las VLANs de RECURSOS de los demás edificios
 
 
