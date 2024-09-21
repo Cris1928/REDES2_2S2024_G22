@@ -152,7 +152,9 @@ El EIGRP es un protocolo de enrutamiento de estado de enlace, que se utiliza par
 
 
 ## acls
-Estas seran utilizadas para que bloqueen o permitan tráfico de manera específica, como ejemplificacion de la siguiente forma se han configurado los acls del switch T3.
+Estas seran utilizadas para que bloqueen o permitan tráfico de manera específica.  
+De la siguiente forma se han configurado los acls del switchs.  
+### T3
 ```
 ip access-list extended SOPORTE
  permit icmp any any echo
@@ -173,3 +175,35 @@ interface Vlan34
  ip access-group RECURSOS in
 exit
 ```
+### BIBLIOTECA
+```
+ip access-list extended VISITANTES
+ permit icmp any 192.168.44.0 0.0.0.255 echo-reply
+ip access-list extended RECURSOS
+ permit icmp any 192.168.44.0 0.0.0.255 echo-reply
+ deny icmp any 192.168.44.0 0.0.0.255 echo
+ permit icmp any any echo-reply
+ permit icmp any any echo
+```
+### M2
+```
+ip access-list extended VISITANTES
+ permit icmp any 192.168.44.0 0.0.0.255 echo-reply
+ip access-list extended RECURSOS
+ permit icmp any 192.168.44.0 0.0.0.255 echo-reply
+ deny icmp any 192.168.44.0 0.0.0.255 echo
+ permit icmp any any echo-reply
+ permit icmp any any echo
+```
+### T9
+```
+ip access-list extended VISITANTES
+ permit icmp any 192.168.44.0 0.0.0.255 echo-reply
+ip access-list extended RECURSOS
+ permit icmp any 192.168.44.0 0.0.0.255 echo-reply
+ deny icmp any 192.168.44.0 0.0.0.255 echo
+ permit icmp any any echo-reply
+ permit icmp any any echo
+```
+
+
