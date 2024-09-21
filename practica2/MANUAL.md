@@ -19,3 +19,9 @@ Existen 8 redes dentro de la topología con una ip determinada con la siguientes
 | 13.0.0.0  | --- | T9  -> T3
 | 11.0.0.0  | --- | BIBLIOTECA -> T3 
 
+## M2 - RECURSOS  
+![image](https://github.com/user-attachments/assets/5948eb67-fcb3-46ec-8caf-a500917e2ce0)
+## M2 - VISITANTES
+![image](https://github.com/user-attachments/assets/98570647-b7f1-4a46-a69e-2d22ce552edb)
+
+
