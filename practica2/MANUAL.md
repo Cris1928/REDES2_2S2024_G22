@@ -212,5 +212,9 @@ Todas las demás VLANs de la red.
 
 ### RECURSOS – T3, M2, T9
 Todas las VLANs de RECURSOS de los demás edificios
+![image](https://github.com/user-attachments/assets/8a79a851-80f8-4e03-86cb-c3fea233327c)
+### VISITANTES – T3, M2, T9  
+No debe tener comunicación con las demás VLANs de la red
+![image](https://github.com/user-attachments/assets/878b3ba8-7852-4d1e-8d52-a3f5beb8ebc8)
 
 
