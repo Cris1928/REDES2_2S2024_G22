@@ -15,3 +15,7 @@ Existen 8 redes dentro de la topología con una ip determinada con la siguientes
 | 192.168.64.0 /24  | VISITANTES | T9 
 | 192.168.74.0 /24  | RECURSOS  | BIBLIOTECA 
 | 192.168.84.0 /24  | VISITANTES | BIBLIOTECA 
+| 12.0.0.0  | --- | M2 -> T3
+| 13.0.0.0  | --- | T9  -> T3
+| 11.0.0.0  | --- | BIBLIOTECA -> T3 
+
