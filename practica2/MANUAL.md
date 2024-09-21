@@ -1,4 +1,4 @@
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/11995ed9-1bb7-47ea-9fb1-2750c3fd824b)
 
 
 # MANUAL TECNICO | PRACTICA 2
