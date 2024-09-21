@@ -18,9 +18,9 @@ Existen 8 redes dentro de la topología con una ip determinada con la siguientes
 | 192.168.64.0 /24  | VISITANTES | T9 
 | 192.168.74.0 /24  | RECURSOS  | BIBLIOTECA 
 | 192.168.84.0 /24  | VISITANTES | BIBLIOTECA 
-| 12.0.0.0  | --- | M2 -> T3
-| 13.0.0.0  | --- | T9  -> T3
-| 11.0.0.0  | --- | BIBLIOTECA -> T3 
+| 192.168.50.2 | --- | M2 -> T3
+| 192.168.60.1  | --- | T9  -> T3
+| 192.168.70.1  | --- | BIBLIOTECA -> T3 
 
 ## M2 - RECURSOS  
 ![image](https://github.com/user-attachments/assets/5948eb67-fcb3-46ec-8caf-a500917e2ce0)
@@ -143,4 +143,33 @@ router ospf 22
  network 192.168.70.0 0.0.0.255 area 22
  network 192.168.74.0 0.0.0.255 area 22
  network 192.168.84.0 0.0.0.255 area 22
+```
+
+
+## EIGRP
+
+El EIGRP es un protocolo de enrutamiento de estado de enlace, que se utiliza para enrutar paquetes dentro de una red de computadoras, por lo que se procede a configurar el mismo sobre los switches de la topología, como se muestra a continuación:
+
+
+## acls
+Estas seran utilizadas para que bloqueen o permitan tráfico de manera específica, como ejemplificacion de la siguiente forma se han configurado los acls del switch T3.
+```
+ip access-list extended SOPORTE
+ permit icmp any any echo
+ permit icmp any any echo-reply
+exit
+
+ip access-list extended RECURSOS
+ permit icmp any 192.168.44.0 0.0.0.255 echo-reply
+ deny icmp any 192.168.44.0 0.0.0.255 echo
+ permit icmp any any echo-reply
+ permit icmp any any echo
+exit
+
+interface Vlan14
+ ip access-group SOPORTE out
+exit
+interface Vlan34
+ ip access-group RECURSOS in
+exit
 ```
