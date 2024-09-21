@@ -1,3 +1,6 @@
+![Uploading image.png…]()
+
+
 # MANUAL TECNICO | PRACTICA 2
 ## Topología implementada
 ![image](https://github.com/user-attachments/assets/04239df2-d98e-429d-b083-67accd2421ff)
