@@ -35,4 +35,19 @@ Existen 8 redes dentro de la topología con una ip determinada con la siguientes
 ![image](https://github.com/user-attachments/assets/446bdae5-c219-40aa-b760-2527cb45809d)
 ## T3 - RECURSOS
 ![image](https://github.com/user-attachments/assets/5c33498c-6fa4-4591-8ab1-1815f3b28187)
+## VLAN
+en cada switch involucrado. Creamos las VLANs 34, 14, y 24. Para hacerlo, se siguieron los siguientes pasos en cada switch  
+´´´ 
+Switch(config)# vlan 34
+Switch(config-vlan)# name Recursos
+Switch(config-vlan)# exit
 
+Switch(config)# vlan 14
+Switch(config-vlan)# name Soporte
+Switch(config-vlan)# exit
+
+Switch(config)# vlan 24
+Switch(config-vlan)# name Visitantes
+Switch(config-vlan)# exit
+
+´´´
