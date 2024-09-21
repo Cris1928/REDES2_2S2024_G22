@@ -76,7 +76,7 @@ Para que las VLANs se comuniquen entre los switches, se configuraro enlaces tron
 En el caso de FastEthernet 0/5, FastEthernet 0/4, y similares son los que conectan un switch con otro. En este caso, usa el siguiente comando para configurar un trunk en ambos extremos:
 ```
 Switch(config)# interface fastEthernet 0/5
-Switch(config-if)# switchport mode trunk
+Switch(config-if)# no switchport trunk encapsulation dot1q
 Switch(config-if)# switchport trunk allowed vlan 14,24,34
 Switch(config-if)# exit
 ```
@@ -122,4 +122,25 @@ channel-group 2 mode active
 interface range fastEthernet 0/9-12
 channel-protocol lacp
 channel-group 3 mode active
+```
+## OSPF
+
+El OSPF es un protocolo de enrutamiento dinámico que se utiliza para enrutar paquetes dentro de una red de computadoras, por lo que se procede a configurar el mismo sobre los  switches capa 3 de la topología, como se muestra a continuación:  
+```
+router ospf 22
+ router-id 1.1.1.1
+ log-adjacency-changes
+ network 192.168.50.0 0.0.0.255 area 22
+ network 192.168.60.0 0.0.0.255 area 22
+ network 192.168.70.0 0.0.0.255 area 22
+ network 192.168.34.0 0.0.0.255 area 22
+ network 192.168.44.0 0.0.0.255 area 22
+
+
+router ospf 22
+ router-id 1.1.1.1
+ log-adjacency-changes
+ network 192.168.70.0 0.0.0.255 area 22
+ network 192.168.74.0 0.0.0.255 area 22
+ network 192.168.84.0 0.0.0.255 area 22
 ```
