@@ -149,8 +149,75 @@ router ospf 22
 ## EIGRP
 
 El EIGRP es un protocolo de enrutamiento de estado de enlace, que se utiliza para enrutar paquetes dentro de una red de computadoras, por lo que se procede a configurar el mismo sobre los switches de la topología, como se muestra a continuación:
+### T3
+```
+router eigrp 22
+ network 192.168.50.0
+ network 192.168.60.0
+ network 192.168.70.0
+ network 192.168.44.0
+ network 192.168.34.0
+ no auto-summary
 
+ip classless
+ip route 192.168.14.0 255.255.255.0 192.168.50.2 
+ip route 192.168.24.0 255.255.255.0 192.168.50.2 
+ip route 192.168.54.0 255.255.255.0 192.168.60.2 
+ip route 192.168.64.0 255.255.255.0 192.168.60.2 
+ip route 192.168.74.0 255.255.255.0 192.168.70.2 
+ip route 192.168.84.0 255.255.255.0 192.168.70.2 
 
+ip flow-export version 9
+```
+### M2
+```
+router eigrp 22
+ network 192.168.50.0
+ network 192.168.14.0
+ network 192.168.24.0
+ no auto-summary
+
+ip classless
+ip route 192.168.34.0 255.255.255.0 192.168.50.1 
+ip route 192.168.54.0 255.255.255.0 192.168.50.1 
+ip route 192.168.74.0 255.255.255.0 192.168.50.1 
+ip route 192.168.44.0 255.255.255.0 192.168.50.1 
+
+ip flow-export version 9
+```
+
+### BIBLIOTECA CENTRAL
+```
+router eigrp 22
+ network 192.168.70.0
+ network 192.168.74.0
+ network 192.168.84.0
+ no auto-summary
+
+ip classless
+ip route 192.168.44.0 255.255.255.0 192.168.70.1 
+ip route 192.168.34.0 255.255.255.0 192.168.70.1 
+ip route 192.168.14.0 255.255.255.0 192.168.70.1 
+ip route 192.168.54.0 255.255.255.0 192.168.70.1 
+
+ip flow-export version 9
+```
+## T9
+```
+router eigrp 22
+ network 192.168.60.0
+ network 192.168.64.0
+ network 192.168.54.0
+ no auto-summary
+
+ip classless
+ip route 192.168.44.0 255.255.255.0 192.168.60.1 
+ip route 192.168.34.0 255.255.255.0 192.168.60.1 
+ip route 192.168.14.0 255.255.255.0 192.168.60.1 
+ip route 192.168.74.0 255.255.255.0 192.168.60.1 
+
+ip flow-export version 9
+```
 ## ACLs
 Estas seran utilizadas para que bloqueen o permitan tráfico de manera específica.  
 De la siguiente forma se han configurado los acls del switchs.  
