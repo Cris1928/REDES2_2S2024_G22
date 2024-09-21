@@ -23,5 +23,16 @@ Existen 8 redes dentro de la topología con una ip determinada con la siguientes
 ![image](https://github.com/user-attachments/assets/5948eb67-fcb3-46ec-8caf-a500917e2ce0)
 ## M2 - VISITANTES
 ![image](https://github.com/user-attachments/assets/98570647-b7f1-4a46-a69e-2d22ce552edb)
-
+## BIBLIOTECA CENTRAL - RECURSOS  
+![image](https://github.com/user-attachments/assets/751fb68b-78a0-4066-a953-31cb0e33c14d)
+## BIBLIOTECA CENTRAL - VISITANTES  
+![image](https://github.com/user-attachments/assets/cfc3689f-5050-43bf-92b1-5a2c386a181e)
+## T9 - VISITANTES  
+![image](https://github.com/user-attachments/assets/670946c6-8aba-4771-a1a8-65fe3d83087c)
+## T9 - RECURSOS  
+![image](https://github.com/user-attachments/assets/984f8764-a4d1-43b0-a0dd-05d77aa85b4d)
+## T3 - SOPORTE  
+![image](https://github.com/user-attachments/assets/446bdae5-c219-40aa-b760-2527cb45809d)
+## T3 - RECURSOS
+![image](https://github.com/user-attachments/assets/5c33498c-6fa4-4591-8ab1-1815f3b28187)
 
