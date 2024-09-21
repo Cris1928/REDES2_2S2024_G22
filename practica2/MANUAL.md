@@ -69,10 +69,33 @@ Switch(config-if)# switchport mode access
 Switch(config-if)# switchport access vlan 14
 Switch(config-if)# exit
 ```
-Para las computadoras en la VLAN 24, se siguio este procedimiento en los puertos correspondiente  
+
+## Configurar Trunks entre switches  
+Para que las VLANs se comuniquen entre los switches, se configuraro enlaces troncales entre ellos. Los enlaces troncales permiten que múltiples VLANs pasen a través de un puerto.
+
+En el caso de FastEthernet 0/5, FastEthernet 0/4, y similares son los que conectan un switch con otro. En este caso, usa el siguiente comando para configurar un trunk en ambos extremos:
 ```
-Switch(config)# interface fastEthernet 0/3
-Switch(config-if)# switchport mode access
-Switch(config-if)# switchport access vlan 24
+Switch(config)# interface fastEthernet 0/5
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk allowed vlan 14,24,34
+Switch(config-if)# exit
+```
+Esto para cada cable que conecta un switch con otro  
+##  Configurar un switch con enrutamiento inter-VLAN
+para que las VLANs se comuniquen entre sí (enrutamiento inter-VLAN), se configuro uno de los switches de capa 3 dfel edificio T3 para realizar el enrutamiento entre las VLANs.  
+```
+Switch(config)# interface vlan 34
+Switch(config-if)# ip address 192.168.34.1 255.255.255.0
+Switch(config-if)# no shutdown
+Switch(config-if)# exit
+
+Switch(config)# interface vlan 14
+Switch(config-if)# ip address 192.168.14.1 255.255.255.0
+Switch(config-if)# no shutdown
+Switch(config-if)# exit
+
+Switch(config)# interface vlan 24
+Switch(config-if)# ip address 192.168.24.1 255.255.255.0
+Switch(config-if)# no shutdown
 Switch(config-if)# exit
 ```
