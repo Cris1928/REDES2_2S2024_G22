@@ -99,3 +99,27 @@ Switch(config-if)# ip address 192.168.24.1 255.255.255.0
 Switch(config-if)# no shutdown
 Switch(config-if)# exit
 ```
+
+## LACP
+
+Se realizó la configuración del PortChannel, donde es una técnica que se utiliza para combinar múltiples enlaces físicos en un solo enlace lógico de alta velocidad. Esto mejora la capacidad y la redundancia de la conexión entre dos dispositivos, como un switch y un servidor o entre dos switches, con los siguientes comandos se realizo este proceso en el switch central (T3) y los demas switches de capa 3.  
+Para los switchs de capa 3
+```
+interface range fastEthernet 0/1-x
+channel-protocol lacp
+channel-group 1 mode active
+```
+para el  switch central (T3).  
+```
+interface range fastEthernet 0/1-4
+channel-protocol lacp
+channel-group 12 mode active
+
+interface range fastEthernet 0/5-8
+channel-protocol lacp
+channel-group 2 mode active
+
+interface range fastEthernet 0/9-12
+channel-protocol lacp
+channel-group 3 mode active
+```
